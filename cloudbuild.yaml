@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy','--entry-point','GarbageCollect', '--runtime','go113','--trigger-http','--allow-unauthenticated','--memory', '128']
+  args: ['functions', 'deploy','--entry-point','GarbageCollect', '--runtime','go113','--trigger-http','--allow-unauthenticated','--memory', '128', '--region', 'us-central1']
   env: ['GOPATH=/gopath']
   dir: './src/fn_garbage_collect'
