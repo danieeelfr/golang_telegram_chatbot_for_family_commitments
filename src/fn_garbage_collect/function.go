@@ -19,16 +19,18 @@ type webHookReqBody struct {
 }
 
 type sendMessageReqBody struct {
-	ChatID int64  `json:"chat_id"`
-	Text   string `json:"text"`
+	ChatID    int64  `json:"chat_id"`
+	Text      string `json:"text"`
+	ParseMode string `json:"parse_mode"`
 }
 
 // sendMessage bla bla
 func sendMessage(chatID int64, text string) {
 
 	reqBody := &sendMessageReqBody{
-		ChatID: chatID,
-		Text:   text,
+		ChatID:    chatID,
+		Text:      text,
+		ParseMode: "Markdown",
 	}
 
 	reqBytes, err := json.Marshal(reqBody)
@@ -74,7 +76,7 @@ func GarbageCollect(res http.ResponseWriter, req *http.Request) {
 	case time.Tuesday, time.Thursday, time.Saturday:
 		log.Println("Weekday: " + weekday.String())
 		if body.Message.Text == "/garbage" || body.Message.Text == "/trash" {
-			sendMessage(body.Message.Chat.ID, "Hello guys! \nToday is "+weekday.String()+" and wish you have a great day! \n\nRemember to take out the trash, please.")
+			sendMessage(body.Message.Chat.ID, "# Hello guys! \nToday is **"+weekday.String()+"** and wish you have a great day! \n\nRemember to take out the trash, please. \n ![Tux, the Linux mascot](https://www.iconfinder.com/data/icons/competitive-strategy-and-corporate-training/512/170_waste_disposal_garbage_management_recycle_network_cloud_smart_computing-512.png)")
 		}
 	}
 
