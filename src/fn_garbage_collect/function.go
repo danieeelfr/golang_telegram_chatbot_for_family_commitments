@@ -91,7 +91,7 @@ func BuildMessage(weekday string) string {
 
 	greetings := EmojiSun + " **Good morning!** " + EmojiSun + "\n\n"
 	message := "Today is *" + weekday + "*, and I'd like to wish you a great work day!\n\n"
-	footer := "Remember to **take out the " + EmojiRecicle + " trash " + EmojiRecicle + "**, please."
+	footer := "Remember to **take out the " + EmojiRecicle + " **trash** " + EmojiRecicle + "**, please."
 
 	return greetings + message + footer
 }
