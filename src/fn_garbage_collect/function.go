@@ -26,6 +26,8 @@ func GarbageCollect(res http.ResponseWriter, req *http.Request) {
 	default:
 		if body.Message.Text == "/garbage" || body.Message.Text == "/trash" {
 			sendTelegramMessage(body.Message.Chat.ID, BuildTelegramMessage(weekday.String()))
+		} else {
+			sendTelegramMessage(body.Message.Chat.ID, "I'm sorry but I know nothing about "+body.Message.Text)
 		}
 	}
 

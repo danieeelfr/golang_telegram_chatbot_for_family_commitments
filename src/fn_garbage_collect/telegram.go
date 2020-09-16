@@ -62,9 +62,9 @@ func BuildTelegramMessage(weekday string) string {
 	const EmojiSun string = "\xE2\x98\x80"
 	const EmojiRecicle string = "\xE2\x99\xBB"
 
-	greetings := EmojiSun + " **Good morning!** " + EmojiSun + "\n\n"
-	message := "Today is *" + weekday + "*, and I'd like to wish you a great work day!\n\n"
-	footer := "Remember to **take out the " + EmojiRecicle + " **trash** " + EmojiRecicle + "**, please."
+	greetings := EmojiSun + " Good morning! " + EmojiSun + "\n\n"
+	message := "Today is *" + weekday + "*, and I'd like to wish you a great day!\n\n"
+	footer := "Please remember to **take out the " + EmojiRecicle + " *trash* " + EmojiRecicle + "**."
 
 	return greetings + message + footer
 }
