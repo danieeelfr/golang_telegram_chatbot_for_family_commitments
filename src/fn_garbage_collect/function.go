@@ -76,7 +76,7 @@ func GarbageCollect(res http.ResponseWriter, req *http.Request) {
 	case time.Tuesday, time.Thursday, time.Saturday, time.Wednesday:
 		log.Println("Weekday: " + weekday.String())
 		if body.Message.Text == "/garbage" || body.Message.Text == "/trash" {
-			sendMessage(body.Message.Chat.ID, "<b>Good morning!</b> \nToday is **"+weekday.String()+"** and wish you <strong>have</strong> a '**great**' day! \n\nRemember to take out the trash, please. \n ![](https://www.flaticon.com/svg/static/icons/svg/3437/3437346.svg)")
+			sendMessage(body.Message.Chat.ID, "<b>Good morning!</b> \nToday is __"+weekday.String()+"__ and wish you _have_ a **great** ___day___! \n\nRemember to take out the trash, please. \n ![](https://www.flaticon.com/svg/static/icons/svg/3437/3437346.svg)")
 		}
 	}
 
