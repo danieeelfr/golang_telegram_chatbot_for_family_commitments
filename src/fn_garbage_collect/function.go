@@ -76,10 +76,22 @@ func GarbageCollect(res http.ResponseWriter, req *http.Request) {
 	case time.Tuesday, time.Thursday, time.Saturday, time.Wednesday:
 		log.Println("Weekday: " + weekday.String())
 		if body.Message.Text == "/garbage" || body.Message.Text == "/trash" {
-			sendMessage(body.Message.Chat.ID, "**Good morning!** \nToday is *"+weekday.String()+"* and wish you _have_ a *great* ___day___! \n\nRemember to take out the trash, please. :recycle: \n \xE2\x99\xBB \n![](https://abs.twimg.com/emoji/v1/72x72/267b.png)")
+			sendMessage(body.Message.Chat.ID, BuildMessage(weekday.String()))
 		}
 	}
 
 	log.Println(res, html.EscapeString("Finished..."))
 	return
+}
+
+// BuildMessage bla
+func BuildMessage(weekday string) string {
+	const EmojiSun string = "\xE2\x98\x80"
+	const EmojiRecicle string = "\xE2\x99\xBB"
+
+	greetings := EmojiSun + " **Good morning!** " + EmojiSun + "\n\n"
+	message := "Today is *" + weekday + "*, and I'd like to wish you a great work day!\n\n"
+	footer := "Remember to **take out the " + EmojiRecicle + " trash " + EmojiRecicle + "**, please."
+
+	return greetings + message + footer
 }
