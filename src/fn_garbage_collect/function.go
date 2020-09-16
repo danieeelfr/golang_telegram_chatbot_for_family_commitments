@@ -76,7 +76,7 @@ func GarbageCollect(res http.ResponseWriter, req *http.Request) {
 	case time.Tuesday, time.Thursday, time.Saturday, time.Wednesday:
 		log.Println("Weekday: " + weekday.String())
 		if body.Message.Text == "/garbage" || body.Message.Text == "/trash" {
-			sendMessage(body.Message.Chat.ID, "# Hello guys! \nToday is **"+weekday.String()+"** and wish you have a great day! \n\nRemember to take out the trash, please. \n ![Tux, the Linux mascot](https://www.iconfinder.com/data/icons/competitive-strategy-and-corporate-training/512/170_waste_disposal_garbage_management_recycle_network_cloud_smart_computing-512.png)")
+			sendMessage(body.Message.Chat.ID, "<b>Good morning!</b> \nToday is **"+weekday.String()+"** and wish you <strong>have</strong> a '**great**' day! \n\nRemember to take out the trash, please. \n ![](https://www.flaticon.com/svg/static/icons/svg/3437/3437346.svg)")
 		}
 	}
 
