@@ -24,10 +24,12 @@ func GarbageCollect(res http.ResponseWriter, req *http.Request) {
 	case time.Tuesday, time.Thursday, time.Saturday:
 		sendTelegramMessage(body.Message.Chat.ID, BuildTelegramMessage(weekday.String()))
 	default:
-		if body.Message.Text == "/garbage" || body.Message.Text == "/trash" {
+		if body.Message.Text == "/lixo" || body.Message.Text == "/lixeira" ||
+			body.Message.Text == "/rotina" || body.Message.Text == "/tarefas" ||
+			body.Message.Text == "/o que fazer" || body.Message.Text == "/lembrar" {
 			sendTelegramMessage(body.Message.Chat.ID, BuildTelegramMessage(weekday.String()))
 		} else {
-			sendTelegramMessage(body.Message.Chat.ID, "I'm sorry but I know nothing about "+body.Message.Text)
+			sendTelegramMessage(body.Message.Chat.ID, "Comando não reconhecido."+body.Message.Text)
 		}
 	}
 
