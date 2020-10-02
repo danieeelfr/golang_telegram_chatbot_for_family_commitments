@@ -3,11 +3,11 @@ steps:
   args: ['functions', 'deploy','fn_garbage_collect_golang','--region','us-central1','--entry-point','GarbageCollect','--runtime','go113','--trigger-http','--allow-unauthenticated','--memory', '128MB']
   env: ['GOPATH=/gopath']
   dir: './src/fn_garbage_collect'
-- name: 'fn_garden_care'
-  args: ['functions', 'deploy','fn_garden_care','--region','us-central1','--entry-point','GardenCare','--runtime','go113','--trigger-http','--allow-unauthenticated','--memory', '128MB']
+- name: 'fn_garden_care_golang'
+  args: ['functions', 'deploy','fn_garden_care_golang','--region','us-central1','--entry-point','GardenCare','--runtime','go113','--trigger-http','--allow-unauthenticated','--memory', '128MB']
   env: ['GOPATH=/gopath']
   dir: './src/fn_garden_care'
-- name: 'fn_garden_care'
-  args: ['functions', 'deploy','fn_shop_remember','--region','us-central1','--entry-point','ShopRemember','--runtime','go113','--trigger-http','--allow-unauthenticated','--memory', '128MB']
+- name: 'fn_shop_remember_golang'
+  args: ['functions', 'deploy','fn_shop_remember_golang','--region','us-central1','--entry-point','ShopRemember','--runtime','go113','--trigger-http','--allow-unauthenticated','--memory', '128MB']
   env: ['GOPATH=/gopath']
   dir: './src/fn_shop_remember'
