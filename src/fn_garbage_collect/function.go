@@ -28,8 +28,6 @@ func GarbageCollect(res http.ResponseWriter, req *http.Request) {
 			body.Message.Text == "/rotina" || body.Message.Text == "/tarefas" ||
 			body.Message.Text == "/o que fazer" || body.Message.Text == "/lembrar" {
 			sendTelegramMessage(body.Message.Chat.ID, BuildTelegramMessage(weekday.String()))
-		} else {
-			sendTelegramMessage(body.Message.Chat.ID, "Comando não reconhecido."+body.Message.Text)
 		}
 	}
 
