@@ -25,7 +25,7 @@ type sendMessageReqBody struct {
 func sendTelegramMessage(chatID int64, text string) {
 	log.Println("13")
 	reqBody := &sendMessageReqBody{
-		ChatID:    -467000473,
+		ChatID:    chatID,
 		Text:      text,
 		ParseMode: "Markdown",
 	}
