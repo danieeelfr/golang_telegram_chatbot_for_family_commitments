@@ -39,7 +39,7 @@ func sendTelegramMessage(chatID int64, text string) {
 
 	log.Println(reqBytes)
 
-	res, err := http.Post("https://api.telegram.org/bot1397188226:AAE7Y6CHuaxVZ3lFOBmPc7CybfK8Chj-VzA/sendMessage", "application/json", bytes.NewBuffer(reqBytes))
+	res, err := http.Post("https://api.telegram.org/bot1291129494:AAFFyAzvtGgLEwFcZQztG0qsMTAJAtCYWms/sendMessage", "application/json", bytes.NewBuffer(reqBytes))
 
 	if err != nil {
 		log.Println("An error occured (calling api with POST)")
