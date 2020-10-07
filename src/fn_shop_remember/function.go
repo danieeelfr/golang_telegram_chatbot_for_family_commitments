@@ -2,7 +2,6 @@ package p
 
 import (
 	"encoding/json"
-	"html"
 	"log"
 	"net/http"
 )
@@ -42,6 +41,5 @@ func ShopRemember(res http.ResponseWriter, req *http.Request) {
 		sendTelegramMessage(body.Message.Chat.ID, BuildTelegramMessage(list))
 	}
 
-	log.Println(res, html.EscapeString("Finished..."))
 	return
 }
