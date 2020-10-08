@@ -62,16 +62,16 @@ func sendTelegramMessage(chatID int64, text string) {
 func BuildTelegramMessage(toRemember string) string {
 	const EmojiShop1 string = " \xF0\x9F\x92\xAC	\xF0\x9F\x92\xB0 "
 
-	greetings := "Oi!\n\n"
+	greetings := EmojiShop1 + "Oi, está na hora de abastecer a dispensa!" + EmojiShop1 + "\n\n"
 
-	message := ""
-	footer := ""
+	message := "*Lista de compras:* \n"
+	footer := EmojiShop1
 
 	if string(toRemember[0]) == "/" {
-		message = "Passando aqui para te lembrar de:" + EmojiShop1 + toRemember + EmojiShop1 + "*\n\n"
-		footer = "Caso você queira uma sugestão para lista de compras, responda:\n\n /lista sacolao\n ou \n /lista supermercado."
+		message = "Passando aqui para te lembrar de fazer:*" + EmojiShop1 + toRemember + EmojiShop1 + "*\n\n"
+		footer = "Caso você queira uma sugestão para lista de compras, envie:\n\n /lista sacolão\n ou \n /lista supermercado."
 	} else {
-		message = "\xF0\x9F\x92\xAD " + toRemember + " \xF0\x9F\x92\xAD"
+		message += "\xF0\x9F\x92\xAD " + toRemember + " \xF0\x9F\x92\xAD"
 	}
 
 	return greetings + message + footer

@@ -15,11 +15,8 @@ func GardenCare(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	log.Println(body)
-
 	if body.Message.Text == "/plantas" || body.Message.Text == "/jardim" ||
-		body.Message.Text == "/natureza" || body.Message.Text == "/tarefas" ||
-		body.Message.Text == "/o que fazer" || body.Message.Text == "/lembrar" {
+		body.Message.Text == "/lembrar" || body.Message.Text == "/tarefas" {
 		sendTelegramMessage(body.Message.Chat.ID, BuildTelegramMessage())
 	}
 

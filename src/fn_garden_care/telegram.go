@@ -67,7 +67,7 @@ func BuildTelegramMessage() string {
 
 	greetings := EmojiSun + EmojiPlant1 + " Olá! " + EmojiPlant2 + EmojiSun + "\n\n"
 	message := "Vamos aproveitar o dia para *cuidar da natureza?*\n\n"
-	footer := "Por favor, *lembre-se de regar e cuidar das plantas do apartamento.* " + EmojiPlant3
+	footer := "Por favor, lembre-se de regar e cuidar das plantas." + EmojiPlant3
 
 	return greetings + message + footer
 }
